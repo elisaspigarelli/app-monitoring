@@ -1,0 +1,28 @@
+.nav-bar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 40px;
+  padding-right: 100px;
+}
+
+.container-page {
+    padding: 24px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}  
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+mat-icon, img {
+  cursor: pointer;
+}
+

@@ -1,0 +1,20 @@
+.graph-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.graph-wrapper {
+  position: relative;
+  height: 500px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.range-field {
+ margin-bottom: 16px;
+}
+

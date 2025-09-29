@@ -1,0 +1,79 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$primary: mat.m2-define-palette(mat.$m2-deep-purple-palette);
+$accent: mat.m2-define-palette(mat.$m2-pink-palette);
+$warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+$secondary-color: #b39ddb;
+$accent2-color: #AAB0BF;
+$light-color: #F6F8FC;
+
+$theme: mat.m2-define-light-theme((color: (primary: $primary,
+        accent: $accent,
+        warn: $warn )));
+
+
+@include mat.all-component-themes($theme);
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: $light-color
+}
+
+a.nav-link {
+  color: $light-color;
+  text-decoration: none;
+
+  &:hover {
+    color: mat.m2-get-color-from-palette($accent);
+  }
+
+  &.active {
+    color: mat.m2-get-color-from-palette($accent);
+  }
+}
+
+.mat-button-toggle {
+  background-color: $accent2-color;
+  color: $light-color
+}
+
+.mat-button-toggle:hover {
+  background-color: $secondary-color !important;
+  color: mat.m2-get-color-from-palette($accent) !important;
+}
+
+.mat-button-toggle-checked {
+  background-color: mat.m2-get-color-from-palette($accent) !important;
+  color: $light-color !important;
+
+  // Disable hover if checked
+  &:hover {
+    background-color: mat.m2-get-color-from-palette($accent) !important;
+    color: $light-color !important;
+  }
+}
+
+.filter-field {
+  width: 300px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.mat-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.welcome-container {
+  color: mat.m2-get-color-from-palette($accent);
+}

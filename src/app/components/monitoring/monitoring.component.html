@@ -1,0 +1,30 @@
+<div class="graph-controls">
+  <mat-button-toggle-group [(ngModel)]="currentGraph" class="range-field"
+    [hideSingleSelectionIndicator]="true" (change)="selectGraph()">
+    <mat-button-toggle [value]="graphType.Errors">Errors Over Time</mat-button-toggle>
+    <mat-button-toggle [value]="graphType.ResponseTime">Average response time per
+    day</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <mat-form-field appearance="fill" class="filter-field">
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="picker" [formGroup]="range">
+      <input matStartDate placeholder="Start date" formControlName="start">
+      <input matEndDate placeholder="End date" formControlName="end" (dateChange)="dateRangeChange()">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+</div>
+
+@if (loading){
+<div class="mat-spinner">
+  <mat-spinner color="accent"></mat-spinner>
+</div>
+}
+
+@else {
+<div class="graph-wrapper">
+  <app-graph [lineChartData]="lineChartData"></app-graph> <!--  [lineChartOptions]="lineChartOptions" -->
+</div>
+}
